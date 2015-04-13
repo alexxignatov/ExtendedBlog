@@ -1,0 +1,43 @@
+﻿@using ExtendedBlog.WebUI.Extension
+@model ExtendedBlog.WebUI.Models.PostsListViewModel
+
+@{
+    ViewBag.Title = "Теги - Санкт-Петерург";
+}
+
+<section>
+	<div class="container">
+		<div class="row">
+            <h1>Все статьи для tagUrl = @Model.CurrentTagUrl</h1>
+            <div class="col-lg-9 col-md-9">
+                @if (Model.Posts.Count > 0)
+                {
+                    foreach (var post in Model.Posts)
+                    {
+		                @Html.Partial("_PostTemplate", post) 
+                    }
+                }
+                else
+                {
+                    <p>Извините, статьи еще не добавлены!</p>
+                }
+            </div>
+
+            <div class="col-lg-3 col-md-3">
+	            <div class="categories">
+		            <h2>Категории</h2>
+	            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="blog-pager">
+                @Html.PageLinks(Model.PageInfo, x => Url.Action("PostsForTag", new { tagUrl = @Model.CurrentTagUrl, pageNumber = x })) 
+			</div>
+		</div>
+	</div>
+</section>

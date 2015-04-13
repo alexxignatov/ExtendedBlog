@@ -1,0 +1,44 @@
+﻿@model ExtendedBlog.WebUI.Models.LoginModel
+
+<section>
+    <div class="container">
+		<div class="row">
+            <div class="login">
+                @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl}))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <h2>Вход на сайт:</h2>
+                    <p>
+                        @Html.LabelFor(m => m.UserName)
+                        @Html.EditorFor(m => m.UserName)
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </p>
+                    <p>
+                        @Html.LabelFor(m => m.Password)
+                        @Html.PasswordFor(m => m.Password)
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </p>
+                    <p>
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
+                    </p>
+                    
+                    @*Html.Hidden("ReturnUrl") *@
+
+                    <input type="submit" value="Войти" />
+                    
+                    <p class="register-link">
+                        @Html.ActionLink("Регистрация", "Register")
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts 
+{
+    @Scripts.Render("~/jqueryval", "~/jqueryunobtrusiveval")
+}

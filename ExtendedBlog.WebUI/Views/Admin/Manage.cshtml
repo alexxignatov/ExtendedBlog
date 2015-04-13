@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Управление постами, Категориями и Тегами</h2>
+<!--div id="myTab">
+    <ul class="nav nav-tabs">
+        <li><a href="#tab-posts" data-toggle="tab">Посты</a></li>
+        <li><a href="#tab-cats" data-toggle="tab">Категории</a></li>
+        <li><a href="#tab-tags" data-toggle="tab">Теги</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane" id="tab-posts">
+            <table id="tablePosts"></table>
+            <div id="pagerPosts" class="pager"></div>
+        </div>
+        <div class="tab-pane" id="tab-cats">
+            <table id="tableCats"></table>
+            <div id="pagerCats" class="pager"></div>
+        </div>
+        <div class="tab-pane" id="tab-tags">
+            <table id="tableTags"></table>
+            <div id="pagerTags" class="pager"></div>
+        </div>
+    </div>
+</div-->  
+
+<div id="tabs">
+    <ul>
+        <li><a href="#tab-posts">Посты</a></li>
+        <li><a href="#tab-cats">Категории</a></li>
+        <li><a href="#tab-tags">Теги</a></li>
+    </ul>
+    
+    <div id="tab-posts" class="tab">
+        <table id="tablePosts" class="grid">
+        </table>
+        <div id="pagerPosts" class="pager">
+        </div>
+    </div>
+    <div id="tab-cats" class="tab">
+        <table id="tableCats" class="grid">
+        </table>
+        <div id="pagerCats" class="pager">
+        </div>
+    </div>
+    <div id="tab-tags" class="tab">
+        <table id="tableTags" class="grid">
+        </table>
+        <div id="pagerTags" class="pager">
+        </div>
+    </div>
+
+</div>            

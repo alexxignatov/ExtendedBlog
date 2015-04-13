@@ -1,0 +1,16 @@
+﻿@using ExtendedBlog.WebUI.Extension
+@model ExtendedBlog.Model.Data.Post
+
+<div class="art-block article-block">
+    <div class="art-left">
+	    <p>@Model.PostedOn.ToArticleTime()</p>
+	    <div class="inner-img">
+		    <img src="foto/home36.jpg" alt="">
+	    </div> 
+    </div>
+    <div class="art-right">
+        <h2>@Html.PostHeaderLink(Model)</h2>
+	    <p>@Html.Raw(Model.BodyShort)</p>
+    </div>
+</div>
+

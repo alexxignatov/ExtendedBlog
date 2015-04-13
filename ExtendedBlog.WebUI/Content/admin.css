@@ -1,0 +1,19 @@
+﻿body {
+}
+
+.logout 
+{
+    float:right;
+}
+
+.logout a 
+{
+    font-size: 0.8em;
+}
+
+.logout:after 
+{
+    content: "";
+    display: table;
+    clear: both;    
+}

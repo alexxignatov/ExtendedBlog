@@ -1,0 +1,74 @@
+﻿@model ExtendedBlog.WebUI.Models.ProfileViewModel
+
+<section>
+    <div class="container">
+		<div class="row">
+            <div class="profile">
+                <h2>Личный кабинет</h2>
+
+                <h3>Выберите файл для загрузки</h3>
+                @using (Html.BeginForm("UploadAvatar", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    
+                    @Html.HiddenFor(x => x.User.UserId)
+
+                    if (Model.AvatarImg != null)
+                    {
+                        <img src="@Url.Content(Model.AvatarImg.LocalPath)" width="200px" height="200px" alt="это alt" />
+                    }
+                    
+                    <input type="file" name = "AvatarImg.UploadedFile" />
+                    <input type="submit" value="Загрузить" />
+                }
+
+                @using (Html.BeginForm())
+                {
+                    
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <p>
+                         @if (Model.User.Male.HasValue)
+                         {
+                        @Html.RadioButtonFor(model => model.User.Male, true) <text>Male</text>
+                        @Html.RadioButtonFor(model => model.User.Male, false)<text>Female</text>
+                         }
+                         else
+                         {
+                        @Html.RadioButtonFor(model => model.User.Male, false)<text>Male</text>
+                        @Html.RadioButtonFor(model => model.User.Male, true)<text>Female</text>
+                         }
+                    </p>
+                    <p>
+                        @Html.LabelFor(x => x.User.BirthDate)
+                        @Html.EditorFor(x => x.User.BirthDate)
+                        @Html.ValidationMessageFor(x => x.User.BirthDate)
+                    </p> 
+                    <p>
+                        @Html.LabelFor(x => x.User.Email)
+                        @Html.EditorFor(x => x.User.Email)
+                        @Html.ValidationMessageFor(x => x.User.Email)
+                    </p>
+                    <p>
+                        @Html.LabelFor(x => x.User.PhoneNumber)
+                        @Html.EditorFor(x => x.User.PhoneNumber)
+                        @Html.ValidationMessageFor(x => x.User.PhoneNumber)
+                    </p>     
+                    
+                    <p>
+                        @Html.LabelFor(x => x.User.Summary)
+                        @Html.EditorFor(x => x.User.Summary)
+                        @Html.ValidationMessageFor(x => x.User.Summary)
+                    </p>  
+                    
+                    @Html.HiddenFor(x => x.User.UserId)        
+                    
+                    <input type="submit" value="Изменить профиль" />
+                }
+            </div>
+        </div>
+    </div>
+</section>

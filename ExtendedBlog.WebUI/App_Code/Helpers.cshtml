@@ -1,0 +1,7 @@
+﻿@helper Tags(System.Web.Mvc.HtmlHelper helper, IList<ExtendedBlog.Model.Data.Tag> tags)
+{
+    foreach(var tag in tags)
+    {
+        <p>@ExtendedBlog.WebUI.Extension.ActionLinkExtensions.TagLink(helper, tag)</p>
+    }
+}

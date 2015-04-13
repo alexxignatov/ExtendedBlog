@@ -1,0 +1,43 @@
+﻿@using ExtendedBlog.WebUI.Extension
+@model ExtendedBlog.Model.Data.Post
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<section>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9 col-md-9">
+				<div class="art-block full-article">
+                    <div class="article-header">
+				        <h2>@Model.Header</h2>
+                        <p>Теги:</p>
+						@Helpers.Tags(Html, Model.Tags)
+				        <p class="time">@Model.PostedOn.ToArticleTime()</p>
+                    </div>
+					<div class="line"></div>
+					<div class="description">
+					@Html.Raw(Model.Body)
+				    </div>
+                    <div class="author-block">
+							<h4>Автор статьи:</h4>
+							<div class="author-name"><a href="">Катерина Парфенова</a></div>
+							<a href="" class="avatar"><img src="foto/home36.jpg"></a>
+						</div>
+						<div class="art-category">
+							<h4>Категория:</h4>
+							<div>
+                                <a href="#">Ссылка на категорию</a>
+                            </div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3">
+				<div class="categories">
+					<h2>Категории</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

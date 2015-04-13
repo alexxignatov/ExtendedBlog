@@ -1,0 +1,668 @@
+﻿/*body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header, footer, nav, section {
+    display: block;
+}*/
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+/*fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}*/
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* My Code block */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: normal;
+    background: #e5f4f7;
+}
+
+header,
+nav 
+{
+    background: #fff;
+}
+
+header {
+    padding-bottom: 3em;
+}
+
+ul {
+    list-style-type: none; 
+}
+
+nav {
+    padding-bottom: 1em;
+}
+
+a, 
+a:link
+{
+    color: #000;
+}
+
+a:focus, 
+a:visited, 
+a:hover, 
+a:active
+{
+    text-decoration: none;
+    color: #0AAAE4;    
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.phone-number {
+    display: block;
+    text-align: right;
+    margin-bottom: 0.5em;
+}
+
+.phone-block,
+.logo-block 
+{
+    margin-top:1.1em;
+}
+
+.phone-block {
+    position: relative;
+}
+
+.right {
+    float: right;
+}
+
+
+.a-btn {
+    background: #0AAAE4;
+    color: #000 !important;
+    padding: 0.5em 1.2em;
+    border-radius: 0.4em;
+    border: 1px solid #000;
+    display: inline-block;
+}
+
+
+
+.a-btn:hover,
+.callback:hover {
+    text-decoration: none;
+    color: #fff !important;
+}
+
+h1.site-description {
+    font-size: 1.0em;
+    font-weight: normal;
+    margin: 0;
+}
+
+.sitename {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+/* навигация */
+
+nav li {
+    float: left;
+    width: 20%;
+    text-align: center;
+    font-size: 1.2em;
+    box-shadow: 1px 1px 3px 1px #6AD9D9;
+    background: #D2FAFA;
+
+}
+
+nav li a 
+{
+    display: block;
+    padding: 0.8em 0;
+    color: #034859;
+}
+
+nav li a:focus, 
+nav li a:visited, 
+nav li a:hover,
+nav li a:active {
+    background: #ACF7F7;
+}
+
+/* блоки специалистов */
+
+.spec-block {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    box-shadow: 0px 3px 20px rgba(173, 235, 250, 0.5);
+
+}
+
+.spec-block:hover {
+    box-shadow: 0px 3px 20px rgba(17, 201, 247, 0.5);
+}
+
+.spec-imglink {
+    display: block;
+}
+
+.avatar img,
+.spec-imglink img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.spec-block,
+.spec-imglink img {
+    border-radius: 1.5em 1.5em 0 0;
+}
+
+.spec-info {
+    padding: 1em 1em 1em 2em;
+    background: #fff;
+    height: 100px;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    float: left;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+a.spec-name {
+    font-size: 2em;
+    color: #000;
+    margin-bottom: 0.5em;
+}
+
+a.spec-name:hover {
+    color: #0AAAE4;
+}
+
+.info-right {
+    padding-left: 5.5em;
+}
+
+.info-right h4 {
+    margin-top:0;
+}
+
+.info-right p{
+    float: left;
+    font-size: 0.9em;
+    margin-top: 0.3em;
+    margin-right: 2em;
+}
+
+.favorite {
+    float:left;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.3em 0.6em;
+}
+
+.favorite:hover {
+    background: #e5f4f7;
+}
+
+.all-list {
+    text-align: center;
+    margin: 1em auto;
+}
+
+.all-list a{
+    margin-left: 0.3em;
+    font-size: 1.5em;
+    color: #0AAAE4;
+}
+
+.all-list a:hover {
+    text-decoration: underline;
+}
+
+/* Как это работает*/
+
+.line {
+    border-top: 1px dashed #0AAAE4;
+    width: 100%;
+    margin: 3em 0;
+}
+
+.section-h {
+    margin-bottom: 2em;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: normal;
+    color: #0AAAE4;
+}
+
+.section-h span {
+    color: #000;
+    font-size: 1.1em;
+}
+
+.howitwork {
+    list-style-type: none;
+    margin-left: 8em;
+}
+
+.howitwork li {
+    margin-top: 1em;
+    font-size: 1.5em;
+}
+
+.or {
+    margin-top: 3em;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.or a {
+    text-decoration: underline;
+}
+
+.section-h2 {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 0 3em;
+    margin-bottom: 1em;
+}
+
+#podbor {
+    border: 1px solid #000;
+    width: 60%;
+    margin:0 auto;
+    padding: 0.4em 0.7em;
+}
+
+#area-id {
+    display: block;
+    width: 90%;
+    max-height: 250px;
+    margin: 0 auto;
+    resize: vertical;
+    font-size: 0.9em;
+    padding: 0.5em;
+}
+
+.podbor-safe,
+.podbor-h1,
+.podbor-h2 {
+    text-align: center;
+}
+
+.podbor-h1 {
+    font-size: 1.2em;
+}
+
+.podbor-safe {
+    font-size: 0.7em;
+}
+
+input.a-btn {
+    display: block;
+}
+
+.titleh2 {
+    font-size: 1.5em;
+}
+
+
+/* Только для страницы БЛОГ */
+
+.article-block {
+    padding: 1em 1em 1em 8em;
+    margin-bottom: 1em;
+}
+
+.art-block {
+    position: relative;
+    border: 1px solid #000;
+    box-shadow: -2px 2px 12px #0AAAE4;
+}
+
+.art-left {
+    position: absolute;
+    top: 1em;
+    left: -1em;
+}
+
+.art-left p {
+    text-align: right;
+    font-size: 0.8em;    
+}
+
+.art-right {
+    margin-left: 35px;
+}
+
+.art-right h2 {
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+.inner-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.inner-img {
+    width: 125px;
+}
+
+.full-article,
+.categories,
+.article-block {
+    margin-top: 3em;
+}
+
+.categories {
+    height: 600px;
+    border: 1px solid #000;
+    box-shadow: -2px 2px 12px #0AAAE4;
+}
+
+.blog-pager {
+    margin: 3em 2em 0 2em;
+}
+
+.blog-pager ul {
+    text-align: center;
+}
+
+.blog-pager li {
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+.li-first 
+{
+    margin-right: 3em;
+}
+
+.li-last 
+{
+    margin-left: 3em;
+}
+.full-article {
+    padding: 1em;
+    position: relative;
+}
+
+.full-article h2 {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.time {
+    text-align: right;
+    font-size: 0.8em;
+    display: inline-block;
+}
+
+.full-article .line {
+    margin-top: 0;
+}
+
+.description {
+    padding:0 0.7em;
+    line-height: 1.5em;
+    margin-bottom: 2em;
+}
+
+.description img {
+    float: left;
+    /*width: 100px;*/
+    /*height: 100px;*/
+    margin: 0.5em 0.5em 0.5em 0;
+}
+
+.description:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.author-block {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+}
+
+.author-block .avatar {
+    float: none;
+    display: inline-block;
+}
+
+.author-name {
+    margin-bottom: 0.5em;
+}
+
+.author-block h4 {
+    text-align: left;
+    margin-top: 0;
+}
+
+.art-category {
+    float: right;
+}
+
+.blog-pager .selected 
+{
+    background: #0AAAE4;
+    border-radius: 0.4em;
+}
+
+.blog-pager a 
+{
+    display: inline-block;
+    color: #000;    
+    padding: 0.1em 0.3em;
+}
+
+.blog-pager a:hover
+{
+    text-decoration: underline;
+}
+
+.article-header {
+    position: relative;
+}
+
+.article-header p {
+    float: left;
+    margin-right: 1em;
+}
+
+.article-header p a {
+    font-size: 0.8em;
+}
+
+.article-header .time {
+    float: right;
+}
+
+.article-header:after{
+     content: "";
+    display: table;
+    clear: both;
+}
+
+.register form,
+.login form
+{
+    display:block;
+    width: 300px;
+    margin: 4em auto;
+}
+
+.regitster p,
+.login p 
+{
+    font-size: 0.8em;
+}
+
+.register input[type="text"],
+.register input[type="password"],
+.login input[type="text"],
+.login input[type="password"]
+{
+    display: block;
+    width: 100%;
+}
+
+.register input[type="submit"],
+.login input[type="submit"]
+{
+    display:block;
+    text-align: center; 
+}
+
+.user-block 
+{
+    float:right;
+}
+
+.user-block a 
+{
+    font-size: 0.8em;
+}
+
+.user-block button 
+{
+    padding: 3px;
+}
+
+.user-block:after
+{
+    content: "";
+    display: table;
+    clear: both;    
+}
+
+.dropdown-menu 
+{
+    min-width: 120px;    
+}
+
+.register-link 
+{
+    background: red;
+}
+
+
+
+/*   Желательная структура документа   */
+
+/* Главные определения стилей для сайта 
+    - основной шрифт
+    - междустрочное расстояние
+    - размер шрифта
+    - основные цвета ссылок и текста
+    - h1, h2, h3 ...
+    - a 
+    - p
+*/
+
+/* Вспомогательные классы:
+    - .error
+    - .field-validation-error и др.
+    - .show-me { border : 1px solid red; }
+    - .hidden {display : none; }
+    - .relative { position : relative; }
+    */
+
+/* Основные вспомогательные окна и стили
+    - .popup-window 
+    - .popup-window .close 
+    - .popup-window .wrapper
+    - .popup-window .header 
+    - .error-message
+    - .info-message
+    */
+
+/* Основные стили сайта
+    - header
+    - .logo
+    - .user-login
+    - nav.main-menu
+    - .main-content
+    - footer
+*/
+
+/*Главная страница */
+
+/* Страница входа */
+
+/* Страница ошибки */
+
+/* Остальные страницы… */

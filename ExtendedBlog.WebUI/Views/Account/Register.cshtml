@@ -1,0 +1,54 @@
+﻿@model ExtendedBlog.WebUI.Models.RegisterModel
+
+<section>
+    <div class="container">
+		<div class="row">
+            <div class="register">
+                <h2>Регистрация</h2>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <fieldset>
+                        <legend>Введите данные:</legend>
+                    
+                        <p>
+                            @Html.LabelFor(m => m.EMail)
+                            @Html.EditorFor(m => m.EMail)
+                            @Html.ValidationMessageFor(m => m.EMail)
+                        </p>
+                        <p>
+                            @Html.LabelFor(m => m.UserName)
+                            @Html.EditorFor(m => m.UserName)
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </p>
+                        <p>
+                            @Html.LabelFor(m => m.PhoneNumber)
+                            @Html.EditorFor(m => m.PhoneNumber)
+                            @Html.ValidationMessageFor(m => m.PhoneNumber)
+                        </p>
+                        <p>
+                            @Html.LabelFor(m => m.Password)
+                            @Html.PasswordFor(m => m.Password)
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </p>
+                        <p>
+                            @Html.LabelFor(m => m.ConfirmPassword)
+                            @Html.PasswordFor(m => m.ConfirmPassword)
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                        </p>
+                    
+                        <input type="submit" value="Готово" />
+                    </fieldset>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts 
+{
+    @Scripts.Render("~/jqueryval", "~/jqueryunobtrusiveval")
+}
