@@ -18,9 +18,14 @@ namespace ExtendedBlog.Model.Repository
             this.context = context;
         }
 
-        public IList<Post> AllPosts(bool onlyPublished = true)
+        public IList<Post> AllPosts()
         {
-            return context.Posts.OrderBy(z => z.PostedOn).Where(z => onlyPublished || z.Published == true).ToList();
+            return AllPosts(true);
+        }
+
+        public IList<Post> AllPosts(bool onlyPublished)
+        {
+            return context.Posts.OrderBy(z => z.PostedOn).Where(z => onlyPublished || z.Published).ToList();
         }
 
         public int TotalPosts(bool onlyPublished = true)
