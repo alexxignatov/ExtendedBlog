@@ -9,7 +9,7 @@ namespace ExtendedBlog.Model.Repository
 {
     public interface IPostRepository
     {
-        IList<Post> AllPosts();
+        IEnumerable<Post> AllPosts();
         IList<Post> AllPosts(bool onlyPublished);
         int TotalPosts(bool onlyPublished = true);
         int AddPost(Post post);
