@@ -18,7 +18,7 @@ namespace ExtendedBlog.Model.Repository
             this.context = context;
         }
 
-        public IList<Post> AllPosts()
+        public ICollection<Post> AllPosts()
         {
             return AllPosts(true);
         }
