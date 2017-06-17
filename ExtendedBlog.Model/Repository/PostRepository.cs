@@ -21,6 +21,7 @@ namespace ExtendedBlog.Model.Repository
         public IEnumerable<Post> AllPosts()
         {
             return AllPosts(true);
+
         }
 
         public IList<Post> AllPosts(bool onlyPublished)
