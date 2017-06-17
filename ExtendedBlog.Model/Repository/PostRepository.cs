@@ -18,9 +18,10 @@ namespace ExtendedBlog.Model.Repository
             this.context = context;
         }
 
-        public ICollection<Post> AllPosts()
+        public IEnumerable<Post> AllPosts()
         {
             return AllPosts(true);
+
         }
 
         public IList<Post> AllPosts(bool onlyPublished)
